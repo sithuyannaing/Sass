@@ -1,0 +1,19 @@
+@mixin btn() {
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: $lime;
+  margin-left: 16px;
+  color: $light;
+}
+
+@each $key, $val in $colors {
+  .btn-#{$key} {
+    @include btn();
+    background-color: $val;
+    &:hover {
+      background-color: lighten(map-get($colors, "red"), 5);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./components/variables";
+@import "./components/typography";
+@import "./components/button";
+@import "./components/utilities";
+@import "./components/breakpoints";
+@import "./components/grid";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: $font-family;
+}
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: $base-padding $base-padding * 2;
+    background: $light;
+    .menu__bar {
+      opacity: 1;
+      @include md {
+        opacity: 0;
+      }
+      
+    }
+  }
+  .navi__logo {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: $font-size-lg;
+  }
+  
+  ul {
+    display: none;
+    @include md{
+      display: flex;
+    }
+    a {
+      text-decoration: none;
+      color: map-get($colors, "black");
+      font-size: $font-size-sm;
+      &:hover{
+        color: $secondary;
+      }
+    }
+  }
+}
+section {
+  .section1__img {
+    width: 100%;
+    height: calc(100vh - 3.9375rem);
+  }
+}
+div {
+  &:first-child {
+    align-self: center;
+    button {
+      margin: 0;
+    }
+  }
+  h1{
+    font-size: $font-size-xxl;
+  }
+  h2{
+    font-size: $font-size-xl;
+  }
+
+}
